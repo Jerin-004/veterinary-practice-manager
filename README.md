@@ -60,7 +60,7 @@ This project demonstrates responsible AI usage to assist veterinary workflows wh
 ## License
 MIT License
 
-```md
+
 ## 🏗️ System Architecture
 
 ![System Architecture](architecture_diagram.png)
