@@ -186,7 +186,7 @@ def suggest_protocol(note: str = Query(...)):
 @app.get("/qr/{pet_name}")
 def generate_qr(pet_name: str):
     os.makedirs("qrcodes", exist_ok=True)
-    url = f"http://localhost:5173/emergency/{pet_name}"
+    url = f"https://veterinary-practice-manager.vercel.app/emergency/{pet_name}"
     path = f"qrcodes/{pet_name}.png"
 
     img = qrcode.make(url)

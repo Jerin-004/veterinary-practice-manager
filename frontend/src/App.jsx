@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Emergency from "./Emergency";
 
-const API = "http://localhost:8000";
+const API = "https://veterinary-practice-manager.onrender.com";
 
 function Home() {
   const [petName, setPetName] = useState("");
