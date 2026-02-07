@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-const API = "https://veterinary-practice-manager.onrender.com/"
+const API = "https://veterinary-practice-manager.onrender.com"
 
 export default function Emergency() {
   const { petName } = useParams()
