@@ -21,12 +21,12 @@ function Home() {
       });
       if (res.ok)
         setStatus({
-          msg: "✅ Medical record saved successfully",
+          msg: "Medical record saved successfully",
           type: "success",
         });
       else throw new Error();
     } catch {
-      setStatus({ msg: "❌ Error saving record", type: "error" });
+      setStatus({ msg: " Error saving record", type: "error" });
     }
   };
 
@@ -34,7 +34,7 @@ function Home() {
     // 🔥 CLEAR OLD RESULTS FIRST
     setProtocols([]);
 
-    setStatus({ msg: "🤖 AI Analyzing...", type: "loading" });
+    setStatus({ msg: "AI Analyzing...", type: "loading" });
 
     try {
       const res = await fetch(
@@ -44,9 +44,9 @@ function Home() {
       const data = await res.json();
 
       setProtocols(data); // ✅ New results only
-      setStatus({ msg: "✅ Protocols generated", type: "success" });
+      setStatus({ msg: "Protocols generated", type: "success" });
     } catch {
-      setStatus({ msg: "❌ AI Analysis Failed", type: "error" });
+      setStatus({ msg: "AI Analysis Failed", type: "error" });
     }
   };
 
@@ -93,13 +93,13 @@ function Home() {
 
         <div className="buttons">
           <button className="btn-primary" onClick={saveRecord}>
-            💾 Save Record
+            Save Record
           </button>
           <button className="btn-secondary" onClick={suggestProtocol}>
-            🧠 AI Suggest
+            AI Suggest
           </button>
           <button className="btn-accent" onClick={generateQR}>
-            📱 Get QR
+            Get QR
           </button>
         </div>
 
@@ -118,7 +118,7 @@ function Home() {
       >
         {protocols.length > 0 && (
           <div className="card">
-            <h2>🧠 Suggested Protocols</h2>
+            <h2>Suggested Protocols</h2>
             <div className="protocol-list">
               {protocols.map((p, i) => (
                 <div key={i} className="protocol">
