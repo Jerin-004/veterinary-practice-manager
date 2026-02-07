@@ -1,0 +1,240 @@
+:root {
+  --primary: #10b981;       /* Emerald Green */
+  --primary-dark: #059669;
+  --secondary: #64748b;     /* Slate */
+  --accent: #3b82f6;        /* Blue */
+  --danger: #ef4444;        /* Red */
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Header Styling */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--bg);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: #f9fafb;
+  box-sizing: border-box; /* Fixes width issues */
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Button Group */
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Button Variants */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-secondary:hover { background: #ecfdf5; }
+
+.btn-accent {
+  background: var(--text-main);
+  color: white;
+}
+.btn-accent:hover { background: black; transform: translateY(-1px); }
+
+/* Status Messages */
+.status {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.status.success { background: #d1fae5; color: #065f46; }
+.status.loading { background: #e0f2fe; color: #075985; }
+.status.error { background: #fee2e2; color: #991b1b; }
+
+/* Protocol Section */
+.protocol-list {
+  display: grid;
+  gap: 15px;
+}
+
+.protocol {
+  background: #f8fafc;
+  border-left: 5px solid var(--accent);
+  padding: 15px 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.protocol h3 {
+  margin: 0 0 5px 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.protocol p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+/* QR Section */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-frame {
+  padding: 15px;
+  background: white;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.qr-frame img {
+  display: block;
+  max-width: 150px;
+}
+
+/* EMERGENCY SPECIFIC STYLES */
+.emergency-layout {
+  border-top: 8px solid var(--danger);
+}
+
+.emergency-badge {
+  background: #fee2e2;
+  color: var(--danger);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.emergency-note {
+  font-size: 1.1rem;
+  background: #fff1f2;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #fecdd3;
+  color: #881337;
+}
+
+@media (max-width: 600px) {
+  .buttons { grid-template-columns: 1fr; }
+}

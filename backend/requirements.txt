@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+numpy
+qrcode
+pillow
+python-dotenv
+huggingface-hub
+
+
