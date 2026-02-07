@@ -54,13 +54,6 @@ npm install
 npm run dev
 ```
 
-## Conclusion
-This project demonstrates responsible AI usage to assist veterinary workflows while maintaining human decision-making and system simplicity.
-
-## License
-MIT License
-
-
 ## System Architecture
 
 ![System Architecture](architecture_diagram.png)
