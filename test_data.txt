@@ -1,0 +1,105 @@
+Add Medical Records (POST /add-record)
+🐶 Sample 1 — Fever + respiratory (classic test)
+{
+  "pet_name": "Bruno",
+  "note": "Dog has high fever, persistent cough and difficulty breathing for two days"
+}
+
+
+✔ Expected later:
+
+Respiratory Infection
+
+Canine Fever
+
+🐱 Sample 2 — Digestive issue (tests semantic understanding)
+{
+  "pet_name": "Kitty",
+  "note": "Cat is vomiting frequently and shows signs of digestive discomfort"
+}
+
+
+✔ Expected later:
+
+Digestive Disorder
+
+🐶 Sample 3 — Vaccination visit (non-symptom text)
+{
+  "pet_name": "Rocky",
+  "note": "Routine vaccination visit, no symptoms observed"
+}
+
+
+✔ Expected later:
+
+Vaccination Protocol
+
+🐕 Sample 4 — Weak symptoms, mixed wording
+{
+  "pet_name": "Max",
+  "note": "Dog looks tired, reduced appetite, mild fever"
+}
+
+
+✔ Expected later:
+
+Canine Fever
+
+🐕 Sample 5 — Different wording, same meaning
+{
+  "pet_name": "Buddy",
+  "note": "Breathing seems labored, wheezing sounds, possible lung infection"
+}
+
+
+✔ Expected later:
+
+Respiratory Infection
+
+2️⃣ Semantic Search / Protocol Suggestion
+
+(POST /suggest-protocol?note=...)
+
+These are very important — they prove semantic search works.
+
+🔍 Test 1 — Different words, same meaning
+Dog has cough and trouble breathing
+
+
+✔ Expected:
+
+Respiratory Infection
+
+🔍 Test 2 — Fever synonyms
+Elevated body temperature and lethargy in dog
+
+
+✔ Expected:
+
+Canine Fever
+
+🔍 Test 3 — Digestive symptoms
+Vomiting and stomach upset in cat
+
+
+✔ Expected:
+
+Digestive Disorder
+
+🔍 Test 4 — Preventive care
+Annual immunization for puppy
+
+
+✔ Expected:
+
+Vaccination Protocol
+
+🔍 Test 5 — Ambiguous input (tests ranking)
+Dog is weak and not eating properly
+
+
+✔ Expected:
+
+Canine Fever (higher score)
+
+Digestive Disorder (lower score)
